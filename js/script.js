@@ -1,3 +1,11 @@
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+        navigator.serviceWorker
+            .register("serviceWorker.js")
+            .then(res => console.log("service worker registered"))
+            .catch(err => console.log("service worker not registered", err))
+    })
+}
 
 function calc(){
   const n1 = document.getElementById('n1');
@@ -6,5 +14,5 @@ function calc(){
 
   console.log(n1.value);
   console.log(n2.value);
-  r.value = number(n2.value) + number(n1.value);
+  r.value = Number(n2.value) + Number(n1.value);
 }
